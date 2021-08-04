@@ -3,7 +3,6 @@ package com.trashboxbobylev.zsrarity;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
-import crafttweaker.mc1120.CraftTweaker;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import stanhebben.zenscript.annotations.ZenExpansion;
@@ -17,9 +16,8 @@ public class ZenRarityExpansion {
         String ogName = I18n.translateToLocal(CraftTweakerMC.getItemStack(itemStack).getItem().getUnlocalizedNameInefficiently(
                 CraftTweakerMC.getItemStack(itemStack)
         ) + ".name");
-        if (ogName.startsWith("\u00A7") ) {
-            CraftTweaker.LOG.info(ogName.substring(2));
-            itemStack.setDisplayName(ogName.substring(2));
+        if (ogName.startsWith("\u00A7") && ogName.substring(1).matches("[0-9a-f]")) {
+            itemStack.setDisplayName(ogName.substring(1).replaceFirst("[0-9a-f]", ""));
         }
 
         itemStack.setDisplayName(TextFormatting.getValueByName(colorName) + itemStack.getDisplayName());
