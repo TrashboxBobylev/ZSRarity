@@ -22,7 +22,6 @@ public class MaterialPartRarityHandler {
         IItemStack item = CraftTweakerMC.getIItemStack(itemTooltipEvent.getItemStack()).amount(1);
         String commandString = item.toCommandString();
         if (rarityMap.containsKey(commandString)) {
-            LogHelper.logInfo(String.format("Color %s as %s", item, rarityMap.get(commandString)));
             ArrayList<String> tooltips = (ArrayList<String>) itemTooltipEvent.getToolTip();
             tooltips.set(0, TextFormatting.getValueByName(rarityMap.get(commandString)) + tooltips.get(0));
         }
