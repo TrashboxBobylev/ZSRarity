@@ -3,7 +3,7 @@
   "modid": "zsrarity",
   "name": "ZSRarity",
   "description": "CraftTweaker addon, that allows you to colorize item's names like rarities.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",

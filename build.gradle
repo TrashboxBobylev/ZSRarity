@@ -27,7 +27,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 apply plugin: 'java'
 
-version = '1.0.2'
+version = '1.0.3'
 group = 'com.trashboxbobylev.zsrarity' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'zsrarity'
 

@@ -26,12 +26,20 @@ public class ZenRarityExpansion {
         if (key2.contains("specialflower")){
             key = key2;
         }
-        String ogName = I18n.translateToLocal( key + ".name");
+        String ogName;
+        if (key2.contains("thermalexpansion.device") || key2.contains("thermalexpansion.dynamo") ||
+            key2.contains("thermalexpansion.machine") || key2.contains("thermalexpansion.storage") ||
+            key2.contains("tile.thermalfoundation")){
+            key = key2;
+        }
+
+        ogName = I18n.translateToLocal( key);
 
         if (ogName.startsWith("\u00A7") && ogName.substring(1).matches("[0-9a-f]")) {
-            setDisplayName(key, ogName.substring(1).replaceFirst("[0-9a-f]", ""));
+            ogName = ogName.substring(1).replaceFirst("[0-9a-f]", "");
         }
-        setDisplayName(key, TextFormatting.getValueByName(colorName) + itemStack.getDisplayName());
+
+        setDisplayName(key, TextFormatting.getValueByName(colorName) + ogName);
     }
 
     private static void setDisplayName(String key, String value){
