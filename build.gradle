@@ -17,6 +17,9 @@ repositories {
         url "https://maven.blamejared.com"
     }
     maven {
+        url "https://cursemaven.com"
+    }
+    maven {
         name 'FancyGradle'
         url = 'https://gitlab.com/api/v4/projects/26758973/packages/maven'
     }
@@ -97,7 +100,8 @@ dependencies {
     implementation fg.deobf("CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.656")
     implementation fg.deobf("com.blamejared:MTLib:3.0.5.15")
     implementation fg.deobf("CraftTweaker2:ZenScript:4.1.20.656")
-
+    implementation fg.deobf("curse.maven:base-246996:3440963")
+    implementation fg.deobf("curse.maven:contenttweaker-237065:3331364")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

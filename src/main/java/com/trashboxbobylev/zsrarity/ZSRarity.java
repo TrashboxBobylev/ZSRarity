@@ -2,7 +2,7 @@ package com.trashboxbobylev.zsrarity;
 
 import net.minecraftforge.fml.common.Mod;
 
-@Mod(modid = ZSRarity.MODID, name = ZSRarity.NAME, version = ZSRarity.VERSION, dependencies = "required-after:crafttweaker")
+@Mod(modid = ZSRarity.MODID, name = ZSRarity.NAME, version = ZSRarity.VERSION, dependencies = "required-after:crafttweaker;after:contenttweaker")
 public class ZSRarity
 {
     public static final String MODID = "zsrarity";
