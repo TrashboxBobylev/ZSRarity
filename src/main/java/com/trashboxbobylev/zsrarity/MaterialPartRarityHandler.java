@@ -19,11 +19,13 @@ import static com.trashboxbobylev.zsrarity.MaterialPartRarity.rarityMap;
 public class MaterialPartRarityHandler {
     @SubscribeEvent
     public static void handleTooltip(ItemTooltipEvent itemTooltipEvent){
-        IItemStack item = CraftTweakerMC.getIItemStack(itemTooltipEvent.getItemStack()).amount(1);
-        String commandString = item.toCommandString();
-        if (rarityMap.containsKey(commandString)) {
-            ArrayList<String> tooltips = (ArrayList<String>) itemTooltipEvent.getToolTip();
-            tooltips.set(0, TextFormatting.getValueByName(rarityMap.get(commandString)) + tooltips.get(0));
+        if (!(itemTooltipEvent.getItemStack().isEmpty())) {
+            IItemStack item = CraftTweakerMC.getIItemStack(itemTooltipEvent.getItemStack());
+            String commandString = item.toCommandString();
+            if (rarityMap.containsKey(commandString)) {
+                ArrayList<String> tooltips = (ArrayList<String>) itemTooltipEvent.getToolTip();
+                tooltips.set(0, TextFormatting.getValueByName(rarityMap.get(commandString)) + tooltips.get(0));
+            }
         }
     }
 }
